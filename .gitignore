@@ -1,6 +1,9 @@
 **/node_modules
 /BackEnd/node_modules
 /BackEnd/node_modules/
+**/.env
+/BackEnd/.env
+/BackEnd/.env/
 /FrontEnd/node_modules
 /FrontEnd/node_modules/
 .codegpt
