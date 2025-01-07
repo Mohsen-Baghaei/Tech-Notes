@@ -30,6 +30,8 @@ app.use("/", require(path.join(__dirname, "routes", "root")));
 
 app.use("/users", require(path.join(__dirname, "routes", "userRoutes")));
 
+app.use("/notes", require("./routes/noteRoutes"));
+
 app.all("*", (req, res) => {
   res.status(404);
   if (req.accepts("html")) {
