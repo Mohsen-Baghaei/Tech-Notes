@@ -2,7 +2,7 @@ import { Routes, Route } from "react-router-dom";
 import Layout from "./components/Layout";
 import Public from "./components/Public";
 import Login from "./featurs/auth/Login";
-import DashLayout from "./components/DashLayout";
+import DashLayout from "./components/dash/DashLayout";
 import Welcome from "./featurs/auth/Welcome";
 import NotesList from "./featurs/notes/NotesList";
 import UsersList from "./featurs/users/UsersList";
