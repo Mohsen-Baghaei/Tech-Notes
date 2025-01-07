@@ -28,6 +28,8 @@ app.use("/", express.static(path.join(__dirname, "public")));
 
 app.use("/", require(path.join(__dirname, "routes", "root")));
 
+app.use("/users", require(path.join(__dirname, "routes", "userRoutes")));
+
 app.all("*", (req, res) => {
   res.status(404);
   if (req.accepts("html")) {
