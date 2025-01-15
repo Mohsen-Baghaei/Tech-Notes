@@ -6,12 +6,17 @@ import DashLayout from "./components/dash/DashLayout";
 import Welcome from "./featurs/auth/Welcome";
 import NotesList from "./featurs/notes/NotesList";
 import UsersList from "./featurs/users/UsersList";
+import EditNote from "./featurs/notes/EditNote";
+import NewNote from "./featurs/notes/NewNote";
+import EditUser from "./featurs/users/EditUser";
+import NewUserForm from "./featurs/users/NewUserForm";
 
 const App = () => {
   return (
     <Routes>
       <Route path="/" element={<Layout />}>
         <Route index element={<Public />} />
+
         <Route path="login" element={<Login />} />
 
         <Route path="dash" element={<DashLayout />}>
@@ -19,10 +24,14 @@ const App = () => {
 
           <Route path="notes">
             <Route index element={<NotesList />} />
+            <Route path=":id" element={<EditNote />} />
+            <Route path="new" element={<NewNote />} />
           </Route>
 
           <Route path="users">
             <Route index element={<UsersList />} />
+            <Route path=":id" element={<EditUser />} />
+            <Route path="new" element={<NewUserForm />} />
           </Route>
         </Route>
       </Route>
