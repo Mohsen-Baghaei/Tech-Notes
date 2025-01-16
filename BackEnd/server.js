@@ -28,6 +28,8 @@ app.use("/", express.static(path.join(__dirname, "public")));
 
 app.use("/", require(path.join(__dirname, "routes", "root")));
 
+app.use("/auth", require(path.join(__dirname, "routes", "authRoutes")));
+
 app.use("/users", require(path.join(__dirname, "routes", "userRoutes")));
 
 app.use("/notes", require("./routes/noteRoutes"));

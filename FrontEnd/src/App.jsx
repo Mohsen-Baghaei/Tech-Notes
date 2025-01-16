@@ -10,6 +10,7 @@ import EditNote from "./featurs/notes/EditNote";
 import NewNote from "./featurs/notes/NewNote";
 import EditUser from "./featurs/users/EditUser";
 import NewUserForm from "./featurs/users/NewUserForm";
+import PreFetch from "./featurs/auth/PreFetch";
 
 const App = () => {
   return (
@@ -19,19 +20,21 @@ const App = () => {
 
         <Route path="login" element={<Login />} />
 
-        <Route path="dash" element={<DashLayout />}>
-          <Route index element={<Welcome />} />
+        <Route element={<PreFetch />}>
+          <Route path="dash" element={<DashLayout />}>
+            <Route index element={<Welcome />} />
 
-          <Route path="notes">
-            <Route index element={<NotesList />} />
-            <Route path=":id" element={<EditNote />} />
-            <Route path="new" element={<NewNote />} />
-          </Route>
+            <Route path="notes">
+              <Route index element={<NotesList />} />
+              <Route path=":id" element={<EditNote />} />
+              <Route path="new" element={<NewNote />} />
+            </Route>
 
-          <Route path="users">
-            <Route index element={<UsersList />} />
-            <Route path=":id" element={<EditUser />} />
-            <Route path="new" element={<NewUserForm />} />
+            <Route path="users">
+              <Route index element={<UsersList />} />
+              <Route path=":id" element={<EditUser />} />
+              <Route path="new" element={<NewUserForm />} />
+            </Route>
           </Route>
         </Route>
       </Route>

@@ -16,7 +16,7 @@ export const notesApiSlice = apiSlice.injectEndpoints({
       validateStatus: (response, result) => {
         return response.status === 200 && !result.isError;
       },
-      keepUnusedDataFor: 5, // change to 60
+
       transformResponse: (responseData) => {
         const loadednotes = responseData.map((note) => {
           note.id = note._id;
